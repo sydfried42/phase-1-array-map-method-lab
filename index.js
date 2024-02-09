@@ -12,5 +12,13 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map(tutorial => {
+    const splitWords = tutorial.split(' ')
+    const indvWords = splitWords.map(word => {
+      const firstLetter = word.charAt(0).toUpperCase(); 
+      const rumpOfWord = word.slice(1);
+      return firstLetter + rumpOfWord;
+    });
+    return indvWords.join(" ");
+  });
+};
